@@ -3,65 +3,38 @@ import { View, StyleSheet,Button } from 'react-native';
 import BackgroundImage from '../components/BackgroundImage';
 import Buttons from '../components/Buttons';
 import {produits} from '../constants/produits.js';
-import images from '../constants/images';
+import images from '../constants/Images';
 
 export default function Poissons(props){
     return (
         <View style={styles.container}>
           <BackgroundImage/>
-          <View style = {styles.title}>
-                    <Button title="home" onPress={()=>props.navigation.navigate('Home')}/>
+          <View>
+                <Button title="home" onPress={()=>props.navigation.navigate('Home')}/>
           </View>
-          <View style = {styles.poissons} >
+          <View style={{flexDirection:'column'}}>
             {produits.map((value,index)=>{
               if(value.category==0){
-                return <Buttons style = {{alignItems:'center'}}
+                return <Buttons
                         key={index}
                         text={value.name}
                         image = {images.poisson.uri}
-                        screen={"ProductsList"}
+                        screen={"ProductsLists"}
                         navigation={props.navigation}
                         data={value}>
                         </Buttons>  
               }        
-        })}</View>
-        
-        </View> 
-      );
+            })
+            }
+        </View>
+    </View> 
+    );
 }
 
 const styles = StyleSheet.create({
     container: {
-      flex : 1,
-      flexDirection : 'column',
-      alignItems: 'stretch',
-      textAlign: 'center',
-      justifyContent: 'center',
-      
-    },
-    boutonrestau:{
-      flex:1,
-      color : 'red',
-      alignItems:'center',
-      margin:0,
-    },
-    texte2 : {
-      flex : 1,
-      alignItems: 'center',
-    },
-    title : {
-        flex: 0.07,
-        justifyContent: 'flex-start',
-      },
-    poissons : {
-      flex : 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      margin:5,
-      backgroundColor:'rgba(52,52,52,0.3)',
-      borderColor:'black',
-      borderWidth:1,
-      },
-
-    
-  });
+        flex : 1,
+        textAlign: 'center',
+        flexDirection: 'column'
+    }
+});
