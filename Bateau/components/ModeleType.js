@@ -1,19 +1,18 @@
 import BackgroundImage from "./BackgroundImage";
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image,StyleSheet, Text, View ,Button} from 'react-native';
+import { Image,StyleSheet, Text, View } from 'react-native';
 
 
 export default function(props){
    return(
        <View style = {styles.container}>
           <BackgroundImage/>   
-          <Image style = {styles.image} source = {props.url} ></Image>
           <View >
-          <Text style = {styles.nom}>{props.nom}</Text>
+          <Text style = {styles.title}>{props.nom}</Text>
           </View>
-          <View >
-          <Text style = {styles.text}>{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}{"\n"}<Text style = {styles.titre}>XXXYYYZZZ</Text>{"\n"}{"\n"}{"\n"} Quil est chaud le soleil {"\n"}
+          <View style= {{flex:2, alignItems:"center", paddingTop:20}}>
+            <Image style = {styles.image} source = {props.url} ></Image>
+          <Text style = {styles.text}><Text style = {styles.titre}>XXXYYYZZZ</Text>{"\n"}{"\n"}{"\n"} Quil est chaud le soleil {"\n"}
           Quand nous sommes en vacances {"\n"}
           Y'a d'la joie, des hirondelles  {"\n"}
           C est le sud de la France {"\n"}
@@ -29,41 +28,31 @@ export default function(props){
 
 const styles = StyleSheet.create({
     container: {
-      flex : 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      
+        flex : 1,
+        textAlign: 'center',
+        flexDirection: 'column'
     },
 
     image: {
-      position:'absolute',
       justifyContent:'flex-start',
-      top : 110,
       width : 200,
-      height:300,
-      borderRadius:30,
+      height:200,
     },
 
-    nom : {
-      fontStyle : 'italic',
-      fontFamily : 'Snell Roundhand',
-      alignItems: 'center',
-      fontSize:35,
-      color : 'white',
-      fontWeight:'bold',
-      top : 30,
-    },
-    text : {
-      marginTop: 260,
-      fontStyle : 'italic',
-      alignItems: 'center',
-      fontSize:12,
-      textAlign:'center',
+    text: {
+        fontSize:10,
+        fontFamily: 'Noteworthy',
+        alignItems:'center'
     },
 
-    titre : {
-      fontStyle : 'italic',
-      alignItems: 'center',
-      fontSize:20,
+    title : {
+        flex: 1,
+        marginTop: 40,
+        fontSize: 30,
+        justifyContent: 'flex-start',
+        color:'#FFFFFF',
+        fontFamily: 'Snell Roundhand',
+        fontWeight: 'bold',
+        fontStyle: 'italic'
     }
 });
