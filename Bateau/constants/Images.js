@@ -23,6 +23,18 @@ const images = {
         imgName: 'poulpe',
         uri: require('../assets/poulpe.png')
     },
+    homardicon: {
+        imgName: 'homardicon',
+        uri: require('../assets/homardRecette_icon.png')
+    },
+    stjacquesicon: {
+        imgName: 'stjacquesicon',
+        uri: require('../assets/saintJacques_icon.png')
+    },
+    baricon: {
+        imgName: 'baricon',
+        uri: require('../assets/barRecette_icon.png')
+    }
 }
 
 export default images;
