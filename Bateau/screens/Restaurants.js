@@ -1,109 +1,112 @@
-import { useLinkProps } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Text, View, StyleSheet,ImageBackground, ImageStore, ProgressBarAndroidComponent } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import BackgroundImage from '../components/BackgroundImage';
 import Buttons from '../components/Buttons';
-import {restaurant} from '../constants/restaurant.js';
+import { restaurant } from '../constants/Restaurant.js';
 
 export default function Restaurants(props){
     return (
         <View style={styles.container}>
           <BackgroundImage/>
-          <View style = {styles.title}>
-            <Text style = {{fontFamily:'Snell Roundhand',color:'#fff',  fontSize : 35,fontWeight:'bold', fontStyle:'italic'}}>Restaurants partenaires</Text>
+          <View>
+            <Text style = {styles.title}>Restaurants partenaires</Text>
           </View>
-          <View style = {styles.texte2}>
-            <Text style ={{fontWeight:'bold',fontSize:12,fontStyle:'italic'}}>
-              Tous les restaurants partenaires avec le bateau de Thibault 
-            </Text>
-            <Text style ={{fontWeight:'normal',fontStyle:'italic',fontSize:15}}>
-              06.63.99.99.78 
-            </Text>
-            <Text style ={{fontWeight:'normal',fontStyle:'italic',fontSize:15}}>
-              lebateaudethibault@gmail.com
-            </Text>  
-            <Text style ={{fontWeight:'normal',fontStyle:'italic',fontSize:15}}>
-              www.facebook.com/lebateaudethibault 
-            </Text>
-            <StatusBar style="auto" />
+          <View style={{paddingBottom:100}}>
+            <Text style = {styles.description}>Tous les restaurants partenaires avec le bateau de Thibault.</Text>
+            <Text style = {styles.telephone}>06.63.99.99.78</Text>
+            <Text style = {styles.mail}>lebateaudethibault@gmail.com</Text>  
+            <Text style = {styles.facebook}>www.facebook.com/lebateaudethibault</Text>
           </View>
-          <View style = {styles.row} >
+          <View style={{flex: 2, flexDirection:'row'}}>
             {restaurant.map((value,index)=>{
-              if(index<2){
-                return <Buttons style = {{alignItems:'center'}}
+                if(index<2){
+                    return <Buttons
                         key={index}
                         text={value.name}
                         image={value.image_icon}
-                        screen={"RestaurantType"}
+                        screen={"RestaurantDetail"}
                         navigation={props.navigation}
                         data={value}>
                         </Buttons>  
-              }        
-        })}</View>
-        <View style = {styles.row} >
+                }        
+            })
+            }
+
+        </View>
+        <View style={{flex: 2, flexDirection:'row'}}>
             {restaurant.map((value,index)=>{
-            if(index>1 && index<4){
-                return <Buttons style = {{alignItems:'center'}}
+                if(index>1 && index<4){
+                    return <Buttons
                         key={index}
                         text={value.name}
                         image={value.image_icon}
-                        screen={"RestaurantType"}
+                        screen={"RestaurantDetail"}
                         navigation={props.navigation}
                         data={value}>
                         </Buttons> 
             }         
-        })}</View>
-        <View style = {styles.row} >
+            })
+            }
+
+        </View>
+        <View style={{flex: 2, flexDirection:'row', paddingBottom:50}}>
             {restaurant.map((value,index)=>{
-            if(index>3){
-                return <Buttons 
+                if(index>3){
+                    return <Buttons 
                         key={index}
                         text={value.name}
                         image={value.image_icon}
-                        screen={"RestaurantType"}
+                        screen={"RestaurantDetail"}
                         navigation={props.navigation}
                         data={value}>
                         </Buttons> 
-            }         
-        })}</View>
-          </View>
-        
-      );
+                }         
+            })
+            }
+        </View>
+    </View>
+    );
 }
 
 const styles = StyleSheet.create({
     container: {
-      flex : 1,
-      flexDirection : 'column',
-      alignItems: 'stretch',
-      textAlign: 'center',
-      justifyContent: 'center',
-      
-    },
-    
-    texte2 : {
-      flex : 1,
-      alignItems: 'center',
+        flex : 1,
+        textAlign: 'center',
+        flexDirection: 'column'
     },
     title : {
-      flex: 1,
-      justifyContent: 'flex-start',
-      marginTop: 75,
-      fontStyle : 'italic',
-      fontFamily : 'Snell Roundhand, cursive',
-      alignItems: 'center',
-    },
-    row : {
-      flex : 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      flexDirection:"row",
-      margin:2,
-      backgroundColor:'rgba(52,52,52,0.3)',
-      borderColor:'black',
-      borderWidth:1,
+        flex: 1,
+        paddingTop: 30,
+        fontSize: 30,
+        justifyContent: 'flex-start',
+        color:'#FFFFFF',
+        fontFamily: 'Snell Roundhand',
+        fontWeight: 'bold',
+        fontStyle: 'italic'
       },
-
-    
-  });
+      description : {
+        flex : 1,
+        marginTop: 50,
+        fontFamily: 'Noteworthy',
+        fontWeight: 'bold',
+        fontSize: 12,
+        fontStyle: 'italic'
+      },
+      telephone : {
+        flex : 1,
+        fontSize:12,
+        fontFamily: 'Noteworthy'
+      },
+      mail : {
+        flex : 1,
+        fontSize:12,
+        fontFamily: 'Noteworthy',
+        fontStyle: 'italic'
+      },
+      facebook : {
+        flex : 1,
+        fontSize:12,
+        fontFamily: 'Noteworthy',
+        fontStyle: 'italic'
+      },
+})
