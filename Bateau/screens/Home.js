@@ -1,125 +1,93 @@
-import { useLinkProps } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View, StyleSheet,ImageBackground, ImageStore } from 'react-native';
 import BackgroundImage from '../components/BackgroundImage';
 import Buttons from '../components/Buttons';
-import images from '../constants/images';
+import images from '../constants/Images';
 
 export default function Home(props){
     return (
         <View style={styles.container}>
           <BackgroundImage/>
-          <View style = {styles.title}>
-            <Text style = {{fontFamily:'Snell Roundhand',color:'#fff',  fontSize : 30,fontWeight:'bold', fontStyle:'italic'}}>Le bateau de Thibault</Text>
+          <View>
+            <Text style={styles.title}>Le bateau de Thibault</Text>
           </View>
-          <View style = {styles.texte2}>
-            <Text style ={{fontWeight:'bold',fontSize:15,fontStyle:'italic'}}>
-              Vente en direct de notre bateau 
-            </Text>
-            <Text style ={{fontWeight:'bold',fontSize:15,fontStyle:'italic'}}>
-              Produits selon la saison, Livraisons sur Paris
-            </Text>
-            <Text style ={{fontWeight:'normal',fontStyle:'italic',fontSize:10}}>
-              06.63.99.99.78 
-            </Text>
-            <Text style ={{fontWeight:'normal',fontStyle:'italic',fontSize:10}}>
-              lebateaudethibault@gmail.com
-            </Text>  
-            <Text style ={{fontWeight:'normal',fontStyle:'italic',fontSize:10}}>
-              www.facebook.com/lebateaudethibault 
-            </Text>
-            <StatusBar style="auto" />
+          <View>
+            <Text style = {styles.description}>Vente en direct de notre bateau{'\n'}Produits selon la saison, Livraisons sur Paris</Text>
+            <Text style = {styles.telephone}>06.63.99.99.78</Text>
+            <Text style = {styles.mail}>lebateaudethilbaul@gmail.com</Text>
+            <Text style = {styles.facebook}>www.facebook.com/lebateaudethibault</Text>
           </View>
-          <View style = {styles.mainbutton}>
-            <View style = {styles.buttonN}>
-                <Buttons text = 'Produits et Promotions' 
-                screen = 'Products'
-                navigation = {props.navigation}
-                image = {images.poisson.uri} > 
-  
-                </Buttons>
-            </View>
-            <View style = {styles.buttons}>
-              <View style = {styles.buttonN}>
-                <Buttons text = 'Bateaux' 
-                screen = 'Bateau'
-                navigation = {props.navigation}
-                image = {images.ancre.uri}> 
-                </Buttons>
-              </View>
-              <View style = {styles.buttonN}>
-                <Buttons text = 'Restaurants' 
-                screen = 'Restaurants'
-                navigation = {props.navigation}
-                image = {images.restaurant.uri}> 
-                </Buttons>
-              </View>
-              </View>
-            <View style = {styles.buttons}>
-              <View style = {styles.buttonN}>
-                <Buttons text = 'Recettes' 
-                screen = 'Recettes'
-                navigation = {props.navigation}
-                image = {images.recette.uri}> 
-                </Buttons>
-              </View>
-              <View style = {styles.buttonN}>
-                <Buttons text = 'Contact' 
-                screen = 'Contact'
-                navigation = {props.navigation}
-                image = {images.tourteau.uri}> 
-                </Buttons>
-              </View>
-            </View>
+          <View style={{ flex: 2, flexDirection: 'row', paddingTop:100}}>
+            <Buttons text = 'Produits et Promotions'
+              image = {images.poisson.uri}
+              screen = 'Products'
+              navigation = {props.navigation}/>
           </View>
+          <View style={{ flex: 2, flexDirection: 'row'}}>
+            <Buttons text = 'Bateaux'
+              image = {images.ancre.uri}
+              screen = 'Bateaux'
+              navigation = {props.navigation}/> 
+            <Buttons text = 'Restaurants'
+              image = {images.restaurant.uri}
+              screen = 'Restaurants'
+              navigation = {props.navigation}/>
           </View>
+          <View style={{ flex: 2, flexDirection: 'row', paddingBottom:50}}>
+            <Buttons text = 'Recettes'
+              image = {images.recette.uri}
+              screen = 'Recettes'
+              navigation = {props.navigation}/>
+            <Buttons text = 'Contact'
+              image = {images.tourteau.uri}
+              screen = 'Contact'
+              navigation = {props.navigation}/> 
+          </View>
+        </View>
       );
 }
 
 const styles = StyleSheet.create({
     container: {
       flex : 1,
-      flexDirection : 'column',
-      alignItems: 'stretch',
       textAlign: 'center',
-      justifyContent: 'center',
-      
+      flexDirection: 'column'
     },
-    texte2 : {
+    description : {
       flex : 1,
-      alignItems: 'center',
+      paddingTop: 30,
+      fontFamily: 'Noteworthy',
+      fontWeight: 'bold',
+      fontSize: 12,
+      fontStyle: 'italic',
+    },
+    telephone : {
+      flex : 1,
+      fontSize:12,
+      fontFamily: 'Noteworthy'
+    },
+    mail : {
+      flex : 1,
+      fontSize:12,
+      fontFamily: 'Noteworthy',
+      fontStyle: 'italic'
+    },
+    facebook : {
+      flex : 1,
+      fontSize:12,
+      fontFamily: 'Noteworthy',
+      fontStyle: 'italic'
     },
     title : {
       flex: 1,
+      marginTop: 40,
+      fontSize: 30,
       justifyContent: 'flex-start',
-      marginTop: 75,
-      fontStyle : 'italic',
-      fontFamily : 'Snell Roundhand, cursive',
-      alignItems: 'center',
-    },
-
-    mainbutton : {
-      flex : 2,
-      margin:5,
-      marginBottom:50, 
-      
-    },
-
-    buttons: {
-      flex : 1,
-      flexDirection:'row',
-      margin : 2,
-      
-    },
-    buttonN : {
-      flex : 1,
-      backgroundColor:'rgba(52,52,52,0.3)',
-      margin : 3,
-      borderColor:'black',
-      borderWidth:1,
-    },
-
+      color:'#FFFFFF',
+      fontFamily: 'Snell Roundhand',
+      fontWeight: 'bold',
+      fontStyle: 'italic'
+    }
   });
 
 
