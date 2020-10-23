@@ -10,17 +10,23 @@ export default function(props){
           <BackgroundImage/>   
           <Image style = {styles.image} source = {require('../assets/TIG.png') }></Image>
           <View >
-          <Text style = {styles.title}>Le bateau de Thibault</Text>
+            <Text style = {styles.title}>Le bateau de Thibault</Text>
           </View>
           <View >
-          <Text style = {styles.text}>{"\n"}{"\n"}<Text>06.63.99.99.78{"\n"}lebateaudethibault@gmail.com{"\n"}www.facebook/lebateaudethibault</Text>{"\n"}{"\n"}{"\n"} Quil est chaud le soleil {"\n"}
-          Quand nous sommes en vacances {"\n"}
-          Y'a d'la joie, des hirondelles  {"\n"}
-          C est le sud de la France {"\n"}
-          Papa bricole au garage {"\n"}
-          Maman lit dans la chaise longue {"\n"}
-          Dans ce joli paysage {"\n"}
-          Moi, je me balade en tongs {"\n"}{"\n"}Que de bonheur! {"\n"}Que du bonheur! </Text>
+            <Text style = {styles.telephone}>06.63.99.99.78</Text>
+            <Text style = {styles.mail}>lebateaudethilbaul@gmail.com</Text>
+            <Text style = {styles.facebook}>www.facebook.com/lebateaudethibault</Text>   
+            <Text>{"\n"}{"\n"}{"\n"} 
+               Qu{"'"}il est chaud le soleil {"\n"}
+               Quand nous sommes en vacances {"\n"}
+               Y'a d'la joie, des hirondelles  {"\n"}
+               C est le sud de la France {"\n"}
+               Papa bricole au garage {"\n"}
+               Maman lit dans la chaise longue {"\n"}
+               Dans ce joli paysage {"\n"}
+               Moi, je me balade en tongs {"\n"}
+               {"\n"}Que de bonheur! {"\n"}Que du bonheur! 
+            </Text>
           </View>
         </View>
    ); 
