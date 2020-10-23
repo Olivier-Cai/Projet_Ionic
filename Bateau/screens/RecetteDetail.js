@@ -1,25 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native';
-import BackgroundImage from '../components/BackgroundImage';
 import React from 'react';
-import ModeleType from '../components/ModeleType';
+import { View, StyleSheet } from 'react-native';
+import ModeleType from '../components/ModeleType'
 
-export default class RecetteDetail extends React.Component{
-    state = {
-        data : []
-    }
-
-
+export default class RecetteDetail extends React.Component {
     render(){
-        return  <View style={styles.container}>
-                    <BackgroundImage/>
-                    <ModeleType url={this.props.route.params.data.image}  nom={this.props.route.params.data.name}/>
-                </View>
+        console.log(this.props.route.params.data)
+        return <View style = {styles.container}>
+                <ModeleType url={this.props.route.params.data.image}  nom={this.props.route.params.data.name}/>
+            </View>
     }
-}
+} 
 
 const styles = StyleSheet.create({
     container: {
-      flex : 1,
-      textAlign: 'center',
-    },
+        flex : 1,
+        textAlign: 'center',
+        flexDirection: 'column'
+    }
 })
