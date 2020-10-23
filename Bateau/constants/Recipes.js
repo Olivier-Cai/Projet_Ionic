@@ -1,9 +1,10 @@
 export const recipes= [
-    {icon_name: "Homard",
-     name: "Homard en chaud froid",
-     image: require("../assets/homardRecette.png"),
-     image_icon: require("../assets/homardRecette_icon.png"),
-     description: ["Faites cuire les homards dans de l'eau bouillante avec du thym,",
+    {
+    icon_name: "Homard",
+    name: "Homard en chaud froid",
+    image: require("../assets/homardRecette.png"),
+    image_icon: require("../assets/homardRecette_icon.png"),
+    description: ["Faites cuire les homards dans de l'eau bouillante avec du thym,",
                 " du laurier, du sel et du poivre de Cayenne.",
                 "Laissez cuire 20 minutes. Egouttez-les et laissez-les refroidir.",
                 "",
@@ -12,11 +13,13 @@ export const recipes= [
                 "Mélangez la mayonnaise avec le cognac, le corail et la ciboulette ciselée."
             ]
     },
-    {icon_name: "St Jacques",
-     name: "Noix de Saint-Jacques flambées au cognac",
-     image: require("../assets/saintJacques.png"),
-     image_icon: require("../assets/saintJacques_icon.png"),
-     description: ["Faire fondre du beurre avec des échalotes puis ajouter les noix de Saint-Jacques.",
+
+    {
+    icon_name: "St Jacques",
+    name: "Noix de Saint-Jacques flambées au cognac",
+    image: require("../assets/saintJacques.png"),
+    image_icon: require("../assets/saintJacques_icon.png"),
+    description: ["Faire fondre du beurre avec des échalotes puis ajouter les noix de Saint-Jacques.",
                 " Les faire revenir en laissant le milieu translucide puis les retirer du feu",
                 "",
                 "Ajouter l'ail et le persil dans la poêle et laisser cuire quelques secondes.",
@@ -26,11 +29,13 @@ export const recipes= [
                 "Déguster chaud nature ou accompagné d'une fondue de poireaux."
             ]
     },
-    {icon_name: "Bar",
-     name: "Bar rôti au laurier frais",
-     image: require("../assets/barRecette.png"),
-     image_icon: require("../assets/barRecette_icon.png"),
-     description: ["Sur une plaque ou un plat allant au four,",
+
+    {
+    icon_name: "Bar",
+    name: "Bar rôti au laurier frais",
+    image: require("../assets/barRecette.png"),
+    image_icon: require("../assets/barRecette_icon.png"),
+    description: ["Sur une plaque ou un plat allant au four,",
                 " déposer quelques feuilles de laurier frais,",
                 " verser un filet d'huile d'olive et du gros sel.",
                 " Déposer le bar, puis l'arroser d'un filet d'huile d'olive",
@@ -39,11 +44,13 @@ export const recipes= [
                 "Cuire au four pendant 12 min à 240°C."
             ]
     },
-    {icon_name:"Tourteau",
-     name: "Tourteau linguine",
-     image: require("../assets/poulpe.png"),
-     image_icon: require("../assets/poulpe.png"),
-     description: ["XXX YYY ZZZ",
+
+    {
+    icon_name:"Tourteau",
+    name: "Tourteau linguine",
+    image: require("../assets/poulpe.png"),
+    image_icon: require("../assets/poulpe.png"),
+    description: ["XXX YYY ZZZ",
                 "",
                 "",
                 "",
@@ -60,11 +67,13 @@ export const recipes= [
                 "Que de bonheur!"
             ]
     },
-    {icon_name:"Recette",
-     name: "Recette XYZ",
-     image: require("../assets/poulpe.png"),
-     image_icon: require("../assets/poulpe.png"),
-     description: ["XXX YYY ZZZ",
+
+    {
+    icon_name:"Recette",
+    name: "Recette XYZ",
+    image: require("../assets/poulpe.png"),
+    image_icon: require("../assets/poulpe.png"),
+    description: ["XXX YYY ZZZ",
                 "",
                 "",
                 "",
@@ -81,11 +90,13 @@ export const recipes= [
                 "Que de bonheur!"
             ]
     },
-    {icon_name:"Recette",
-     name: "Recette XYZ",
-     image: require("../assets/poulpe.png"),
-     image_icon: require("../assets/poulpe.png"),
-     description: ["XXX YYY ZZZ",
+
+    {
+    icon_name:"Recette",
+    name: "Recette XYZ",
+    image: require("../assets/poulpe.png"),
+    image_icon: require("../assets/poulpe.png"),
+    description: ["XXX YYY ZZZ",
                 "",
                 "",
                 "",
@@ -101,5 +112,5 @@ export const recipes= [
                 "Que de bonheur!",
                 "Que de bonheur!"
             ]
-    },
+    }
 ]
